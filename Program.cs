@@ -1,4 +1,9 @@
+using NET108_LAB3_NHOM2_SD22301.Utils;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Gán chuỗi kết nối cho lớp tiện ích DBUtil
+DBUtil.connString = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
